@@ -36,8 +36,8 @@ def loop():
 def destroy():
     for pin in pins:
         GPIO.output(pin, GPIO.HIGH)
-        GPIO.cleanup()
-        print('\nCleaned up resources. Board ready for reuse.')
+    GPIO.cleanup()
+    print('\nCleaned up resources. Board ready for reuse.')
         
 
 
