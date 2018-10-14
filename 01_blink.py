@@ -13,7 +13,7 @@ ledPin = 11
 
 def setup():
     GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(ledPin, GPIO.OUTPUT)
+    GPIO.setup(ledPin, GPIO.OUT)
     GPIO.output(ledPin, GPIO.LOW)
     print('Usig pin {0} to toggle led'.format(ledPin))
     
