@@ -9,7 +9,8 @@ Created on Sun Oct 14 15:03:21 2018
 import RPi.GPIO as GPIO
 import time
 
-pins = [11,13,15,12,16]
+pins = [11, 13, 15, 12]
+sleepTime = 0.5
 
 def setup():
     GPIO.setmode(GPIO.BOARD)
@@ -22,13 +23,13 @@ def loop():
         for pin in pins:
             print('Toggling pin {}.'.format(pin))
             GPIO.output(pin, GPIO.LOW)
-            time.sleep(1)
+            time.sleep(sleepTime)
             GPIO.output(pin, GPIO.HIGH)
             
         for pin in pins[::-1]:
             print('Toggling pin {}.'.format(pin))
             GPIO.output(pin, GPIO.LOW)
-            time.sleep(1)
+            time.sleep(sleepTime)
             GPIO.output(pin, GPIO.HIGH)
             
 def destroy():
