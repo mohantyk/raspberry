@@ -20,18 +20,16 @@ def setup():
 def loop():
     while True:
         for pin in pins:
-            print('Turning pin {} on.'.format(pin))
-            GPIO.setup(pin, GPIO.LOW)
-            time.sleep(0.1)
-            print('Turning pin {} off.'.format(pin))
-            GPIO.setup(pin, GPIO.HIGH)
+            print('Toggling pin {}.'.format(pin))
+            GPIO.output(pin, GPIO.LOW)
+            time.sleep(1)
+            GPIO.output(pin, GPIO.HIGH)
             
         for pin in pins[::-1]:
-            print('Turning pin {} on.'.format(pin))
-            GPIO.setup(pin, GPIO.LOW)
-            time.sleep(0.1)
-            print('Turning pin {} off.'.format(pin))
-            GPIO.setup(pin, GPIO.HIGH)
+            print('Toggling pin {}.'.format(pin))
+            GPIO.output(pin, GPIO.LOW)
+            time.sleep(1)
+            GPIO.output(pin, GPIO.HIGH)
             
 def destroy():
     for pin in pins:
