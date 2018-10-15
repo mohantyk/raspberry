@@ -21,15 +21,16 @@ def setup():
     p.start(0)
     
 def loop():
-    for duty_cycle in range(0,101,1):
-        p.ChangeDutyCycle(duty_cycle)
-        time.sleep(sleepTime)
-    time.sleep(1)
-    
-    for duty_cycle in range(100,-1,-1):
-        p.ChangeDutyCycle(duty_cycle)
-        time.sleep(sleepTime)
-    time.sleep(1)
+    while True:
+        for duty_cycle in range(0,101,1):
+            p.ChangeDutyCycle(duty_cycle)
+            time.sleep(sleepTime)
+        time.sleep(1)
+        
+        for duty_cycle in range(100,-1,-1):
+            p.ChangeDutyCycle(duty_cycle)
+            time.sleep(sleepTime)
+        time.sleep(1)
     
     
 def destroy():
