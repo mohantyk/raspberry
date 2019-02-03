@@ -32,11 +32,11 @@ def loop():
             stop_alertor()
             
 def alertor():
-    p.start(50)
+    p.start(50) # Set Duty Cycle to 50
     for x in range(360):
         sinVal = math.sin(math.pi * x / 180)
         toneVal = 2000 + 500*sinVal
-        p.ChangeFrequency(toneVal)
+        p.ChangeFrequency(toneVal)  # Change the freq (duty cycle remains at 50)
         time.sleep(0.001)
 
 def stop_alertor():
