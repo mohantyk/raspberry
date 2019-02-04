@@ -6,7 +6,7 @@ Created on Sun Feb  3 22:03:40 2019
 @author: kaniska
 """
 
-from mpu6050 import MPU6050
+import MPU6050 
 import time
 
 mpu = MPU6050.MPU6050()
@@ -23,8 +23,8 @@ def loop():
         
         print('Acceleration: {}'.format(accel))
         print('Gyroscope: {}'.format(gyro))
-        
-        time.sleep(0.1)
+        print(' ') 
+        time.sleep(0.5)
         
 
 if __name__ == '__main__':
