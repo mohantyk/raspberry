@@ -56,7 +56,7 @@ def pulse_in(pin, pulse_level, max_wait):
         if (time.time() - t0 > max_wait * 0.000001) :
             print('No pulse found')
             return 0
-	'''
+        '''
         print('.',end='')
     
     t0 = time.time()
