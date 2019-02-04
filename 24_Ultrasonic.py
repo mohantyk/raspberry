@@ -52,12 +52,16 @@ def pulse_in(pin, pulse_level, max_wait):
     '''
     t0 = time.time()
     while GPIO.input(pin) != pulse_level: # No pulse yet
+        '''
         if (time.time() - t0 > max_wait * 0.000001) :
             print('No pulse found')
             return 0
+	'''
+        print('.',end='')
     
     t0 = time.time()
     while GPIO.input(pin) == pulse_level: # Pulse detected
+        print('_', end='')
         if (time.time() - t0 > max_wait * 0.000001) :
             print('Pulse found but waited too long')
             return 0
