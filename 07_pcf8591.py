@@ -17,7 +17,7 @@ cmd = 0x40  # See Fig. 4 in https://www.nxp.com/docs/en/data-sheet/PCF8591.pdf
             
 def analogRead(channel):
     complete_cmd = cmd + channel # set LSBs 0 and 1 for input channels 0-3
-    value = bus.read_byte_data(complete_cmd)
+    value = bus.read_byte_data(address, complete_cmd)
     return value
 
 def analogWrite(value):
